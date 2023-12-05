@@ -1,5 +1,7 @@
 # Pokémon API Documentation
 
+[Deployed URL](https://pokemon-backend-dfea.onrender.com/api/pokemon/)
+
 ## Overview
 
 This document provides detailed information about the Pokémon API, which allows users to retrieve Pokémon data with various options like pagination, sorting, and sorting order. It is built using Node.js and Express.
