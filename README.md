@@ -103,6 +103,61 @@ Fetches details of a specific Pokémon by its name.
 curl -X GET "http://localhost:8081/api/pokemon/bulbasaur"
 ```
 
+#### Response Fields
+
+The response contains a JSON object with the following fields for a Pokémon:
+
+- `id`: The unique identifier for the Pokémon.
+- `name`: The name of the Pokémon.
+- `official_artwork_default`: The URL to the official artwork of the Pokémon.
+- `height`: The height of the Pokémon.
+- `weight`: The weight of the Pokémon.
+- `isDefault`: Boolean indicating if this is the default form.
+- `types`: An array of types that the Pokémon belongs to (e.g., `["grass", "poison"]`).
+- `alt_images`: An array of alternative images, each object containing:
+  - `title`: A descriptive title for the image.
+  - `url`: The URL to the image.
+- `moves`: An array of move names that the Pokémon can learn.
+- `abilities`: An array of ability names that the Pokémon has.
+- `base_stats`: An object containing the base stats, with fields like `hp`, `attack`, `defense`, `special-attack`, `special-defense`, `speed`.
+
+#### Sample Request
+
+```bash
+curl -X GET "http://localhost:8081/api/pokemon/bulbasaur"
+```
+
+#### Sample Response
+
+```json
+{
+  "id": 1,
+  "name": "bulbasaur",
+  "official_artwork_default": "https://example.com/artwork/bulbasaur.png",
+  "height": 7,
+  "weight": 69,
+  "isDefault": true,
+  "types": ["grass", "poison"],
+  "alt_images": [
+    {
+      "title": "Front Default",
+      "url": "https://example.com/images/front_default.png"
+    },
+    // More images...
+  ],
+  "moves": ["tackle", "vine whip", "growl"],
+  "abilities": ["overgrow", "chlorophyll"],
+  "base_stats": {
+    "hp": 45,
+    "attack": 49,
+    "defense": 49,
+    "special-attack": 65,
+    "special-defense": 65,
+    "speed": 45
+  }
+}
+```
+
 ### Create a New Pokémon
 
 `POST /api/pokemon`
